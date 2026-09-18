@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="$(MSBuildThisFileDirectory)..\..\common\oni-mod.props" />
+
+  <PropertyGroup>
+    <AssemblyName>SmartWeightPlate</AssemblyName>
+    <RootNamespace>SmartWeightPlate</RootNamespace>
+    <Version>0.1.0</Version>
+    <UsePLib>true</UsePLib>
+    <ReferenceUnityUI>true</ReferenceUnityUI>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)..\..\common\oni-mod.targets" />
+
+</Project>

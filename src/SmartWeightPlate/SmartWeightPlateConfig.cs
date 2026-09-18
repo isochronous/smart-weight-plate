@@ -1,0 +1,76 @@
+using System.Collections.Generic;
+using STRINGS;
+using TUNING;
+using UnityEngine;
+
+namespace SmartWeightPlate
+{
+	/// <summary>
+	/// Building definition: a 1x1 foundation tile cloned from the vanilla Weight Plate
+	/// (FloorSwitchConfig), reusing its animation with a colour tint as placeholder art.
+	/// </summary>
+	public sealed class SmartWeightPlateConfig : IBuildingConfig
+	{
+		public const string ID = "SmartWeightPlate";
+
+		/// <summary>Placeholder tint that tells the plate apart from the vanilla one.</summary>
+		public static readonly Color32 Tint = new Color32(150, 205, 255, 255);
+
+		public override BuildingDef CreateBuildingDef()
+		{
+			BuildingDef def = BuildingTemplates.CreateBuildingDef(ID, 1, 1, "pressureswitch_kanim", 30, 30f,
+				new float[] { 75f }, MATERIALS.REFINED_METALS, 1600f, BuildLocationRule.Tile,
+				noise: NOISE_POLLUTION.NONE, decor: TUNING.BUILDINGS.DECOR.PENALTY.TIER0);
+			def.IsFoundation = true;
+			def.Overheatable = false;
+			def.Floodable = false;
+			def.Entombable = false;
+			def.ViewMode = OverlayModes.Logic.ID;
+			def.TileLayer = ObjectLayer.FoundationTile;
+			def.ReplacementLayer = ObjectLayer.ReplacementTile;
+			def.SceneLayer = Grid.SceneLayer.TileMain;
+			def.ConstructionOffsetFilter = BuildingDef.ConstructionOffsetFilter_OneDown;
+			def.AudioCategory = "Metal";
+			def.AudioSize = "small";
+			def.BaseTimeUntilRepair = -1f;
+			def.AlwaysOperational = true;
+			def.LogicOutputPorts = new List<LogicPorts.Port>
+			{
+				LogicPorts.Port.OutputPort(SmartWeightPlate.PortId, new CellOffset(0, 0),
+					ModStrings.PortName, ModStrings.PortActive, ModStrings.PortInactive, show_wire_missing_icon: true)
+			};
+			def.AddSearchTerms(SEARCH_TERMS.AUTOMATION);
+			GeneratedBuildings.RegisterWithOverlay(OverlayModes.Logic.HighlightItemIDs, ID);
+			return def;
+		}
+
+		public override void ConfigureBuildingTemplate(GameObject go, Tag prefab_tag)
+		{
+			BuildingConfigManager.Instance.IgnoreDefaultKComponent(typeof(RequiresFoundation), prefab_tag);
+			SimCellOccupier occupier = go.AddOrGet<SimCellOccupier>();
+			occupier.doReplaceElement = true;
+			occupier.movementSpeedMultiplier = DUPLICANTSTATS.MOVEMENT_MODIFIERS.BONUS_2;
+			occupier.notifyOnMelt = true;
+			go.GetComponent<KPrefabID>().prefabSpawnFn += OnSpawn;
+		}
+
+		private static void OnSpawn(GameObject instance)
+		{
+			// Same liquid-layer setup as the vanilla plate.
+			foreach (KBatchedAnimController child in instance.GetComponentsInChildrenOnly<KBatchedAnimController>())
+			{
+				child.SetBlendValue(KBatchedAnimInstanceData.BlendActiveOptions.LiquidVisibilityLayer, isActive: false);
+				child.SetBlendValue(KBatchedAnimInstanceData.BlendActiveOptions.WaterProof, isActive: true);
+			}
+			KBatchedAnimController controller = instance.GetComponent<KBatchedAnimController>();
+			if (controller != null)
+				controller.TintColour = Tint;
+		}
+
+		public override void DoPostConfigureComplete(GameObject go)
+		{
+			go.AddOrGet<SmartWeightPlate>();
+			go.GetComponent<KPrefabID>().AddTag(GameTags.OverlayInFrontOfConduits);
+		}
+	}
+}
