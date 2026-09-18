@@ -1,0 +1,21 @@
+Adds a Smart Weight Plate: a weight plate with a low and a high threshold, so its signal behaves like the Smart Reservoir's instead of a single cut-off.
+
+The plate weighs whatever sits on the tile above it, exactly like the vanilla Weight Plate: a solid tile, loose items and debris, and Duplicants or critters standing on it. Gases and liquids do not count.
+
+[h2]What it does[/h2]
+[list]
+[*]Sends a [b]green[/b] signal once the weight drops to the [b]Low Threshold[/b], and keeps sending it until the weight reaches the [b]High Threshold[/b].
+[*]Sends a [b]red[/b] signal once the weight reaches the High Threshold, and keeps sending it until the weight drops to the Low Threshold.
+[*][b]Invert Signal[/b] swaps green and red without a NOT gate.
+[*]Thresholds run from 0 to 2000 kg, using the same two-slider panel as the Smart Reservoir. The plate's own panel shows the current weight and the invert checkbox.
+[*]Supports the copy-settings tool; all settings are saved with the building.
+[/list]
+
+Typical use: keep a debris pile between two limits, so an auto-sweeper or conveyor loader tops it up only after it has run low, instead of chattering around a single threshold.
+
+Unlocked by [b]Advanced Automation[/b]. Costs 75 kg Refined Metal. Found under Automation > Sensors, next to the vanilla Weight Plate.
+
+[h2]Compatibility[/h2]
+Works with the base game and all DLCs, on build 744825 (U59) or newer. No dependencies. A new game is not required. Placeholder art for now (the vanilla plate with a blue tint).
+
+Source and issue tracker: https://github.com/isochronous/smart-weight-plate
