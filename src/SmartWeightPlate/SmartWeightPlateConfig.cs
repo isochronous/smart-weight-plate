@@ -65,7 +65,10 @@ namespace SmartWeightPlate
 		public override void DoPostConfigureComplete(GameObject go)
 		{
 			go.AddOrGet<SmartWeightPlate>();
-			go.GetComponent<KPrefabID>().AddTag(GameTags.OverlayInFrontOfConduits);
+			// The vanilla plate uses OverlayInFrontOfConduits, which hides the wire running through
+			// its cell in the automation overlay. Logic gates use this tag instead, which keeps
+			// the building just behind the wires.
+			go.GetComponent<KPrefabID>().AddTag(GameTags.OverlayBehindConduits);
 		}
 	}
 }
