@@ -8,7 +8,7 @@ namespace SmartWeightPlate
 	/// The building component. Measures the weight on the tile above exactly like the
 	/// vanilla Weight Plate (LogicMassSensor): a solid tile, loose items, and anything
 	/// carrying a FloorSwitchActivator (Duplicants, critters). The output is a latch with
-	/// Smart Reservoir semantics: it becomes "heavy" once the weight reaches the high
+	/// Reservoir (SmartReservoir) semantics: it becomes "heavy" once the weight reaches the high
 	/// threshold and "light" again once the weight drops to the low threshold. Light sends
 	/// green, heavy sends red, unless the signal is inverted.
 	///
