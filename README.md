@@ -22,7 +22,7 @@ Unlocked by **Advanced Automation** (the tier after the Weight Plate's Generic S
 
 ## Publishing
 
-Not yet on the Steam Workshop. `publish/content` holds the upload set (DLL, `mod.yaml`, `mod_info.yaml`, `preview.png`) and `publish/workshop-description.txt` the Steam-markup description. Publish with Klei's **Oxygen Not Included Uploader** (Steam Library > Tools) pointed at `publish/content`, or `common/tools/WorkshopUpload`, never with steamcmd; see the [oni-mods-common README](https://github.com/isochronous/oni-mods-common#publishing-to-the-steam-workshop) for why. The preview is composed from the game's weight plate sprite with `common/tools/MakePreview`.
+Steam Workshop item **3804040668**. `publish/content` holds the upload set (DLL, `mod.yaml`, `mod_info.yaml`, `preview.png`) and `publish/workshop-description.txt` the Steam-markup description. Update it by zipping the contents of `publish/content` and running `common/tools/WorkshopUpload update 3804040668 <zip> publish/preview.png`, or with Klei's **Oxygen Not Included Uploader** (Steam Library > Tools), never with steamcmd; see the [oni-mods-common README](https://github.com/isochronous/oni-mods-common#publishing-to-the-steam-workshop) for why. The preview is composed from the game's weight plate sprite with `common/tools/MakePreview`.
 
 ## Building
 
