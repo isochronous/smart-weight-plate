@@ -20,10 +20,6 @@ Typical use: keep a debris pile between two limits, so an auto-sweeper or convey
 
 Unlocked by **Advanced Automation** (the tier after the Weight Plate's Generic Sensors). Costs 75 kg Refined Metal. Found under Automation > Sensors, next to the vanilla Weight Plate.
 
-## Publishing
-
-Steam Workshop item **3804040668**. `publish/content` holds the upload set (DLL, `mod.yaml`, `mod_info.yaml`, `preview.png`) and `publish/workshop-description.txt` the Steam-markup description. Update it by zipping the contents of `publish/content` and running `common/tools/WorkshopUpload update 3804040668 <zip> publish/preview.png`, or with Klei's **Oxygen Not Included Uploader** (Steam Library > Tools), never with steamcmd; see the [oni-mods-common README](https://github.com/isochronous/oni-mods-common#publishing-to-the-steam-workshop) for why. The preview is composed from the game's weight plate sprite with `common/tools/MakePreview`.
-
 ## Building
 
 Requires the .NET SDK (8+). Shared build configuration lives in the [oni-mods-common](https://github.com/isochronous/oni-mods-common) submodule, so clone with `--recurse-submodules` (or run `git submodule update --init`). The game DLLs are referenced directly from the game install; override the path if yours differs:
