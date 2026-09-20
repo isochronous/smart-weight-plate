@@ -20,6 +20,17 @@ Typical use: keep a debris pile between two limits, so an auto-sweeper or convey
 
 Unlocked by **Advanced Automation** (the tier after the Weight Plate's Generic Sensors). Costs 75 kg Refined Metal. Found under Automation > Sensors, next to the vanilla Weight Plate.
 
+## Installing
+
+As a local mod:
+
+1. Download `SmartWeightPlate-<version>.zip` from the [latest release](https://github.com/isochronous/smart-weight-plate/releases/latest).
+2. Extract it into a new folder named `SmartWeightPlate` inside the game's local mods folder, so that `mod.yaml` ends up directly inside it (create `local` if it does not exist):
+   - Windows: `Documents\Klei\OxygenNotIncluded\mods\local\SmartWeightPlate`
+   - Linux: `~/.config/unity3d/Klei/Oxygen Not Included/mods/local/SmartWeightPlate`
+   - macOS: `~/Library/Application Support/unity.Klei.Oxygen Not Included/mods/local/SmartWeightPlate`
+3. Start the game, enable the mod under **Mods** in the main menu, and let the game restart.
+
 ## Building
 
 Requires the .NET SDK (8+). Shared build configuration lives in the [oni-mods-common](https://github.com/isochronous/oni-mods-common) submodule, so clone with `--recurse-submodules` (or run `git submodule update --init`). The game DLLs are referenced directly from the game install; override the path if yours differs:
