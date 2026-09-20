@@ -2,7 +2,7 @@
 
 An [Oxygen Not Included](https://www.klei.com/games/oxygen-not-included) mod that adds a **Smart Weight Plate**: a weight plate with a low and a high threshold, so its signal behaves like a Liquid or Gas Reservoir's instead of a single cut-off.
 
-Status: **work in progress**. The building uses the vanilla weight plate art with a blue tint as placeholder art.
+Status: **work in progress**. The building has its own art: `publish/sprite.png` is cut into a body (red and green panel variants) and a moving cap, and built into the kanim under `src/SmartWeightPlate/anim/assets/smart_weight_plate/` by `tools/make_art.py`, so it shows the signal colour and sinks when pressed just like the vanilla plate. The same sprite is the construction ghost and build-menu icon.
 
 ## What it does
 

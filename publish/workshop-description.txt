@@ -16,6 +16,6 @@ Typical use: keep a debris pile between two limits, so an auto-sweeper or convey
 Unlocked by [b]Advanced Automation[/b]. Costs 75 kg Refined Metal. Found under Automation > Sensors, next to the vanilla Weight Plate.
 
 [h2]Compatibility[/h2]
-Works with the base game and all DLCs, on build 744825 (U59) or newer. No dependencies. A new game is not required. Placeholder art for now (the vanilla plate with a blue tint).
+Works with the base game and all DLCs, on build 744825 (U59) or newer. No dependencies. A new game is not required.
 
 Source and issue tracker: https://github.com/isochronous/smart-weight-plate
