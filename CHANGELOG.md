@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+- With Invert Signal on, the output port's hover text and details described the non-inverted plate (Red "at or above the High Threshold" while the plate was light). The port now reads Green at or above the High Threshold, Red at or below the Low Threshold, when inverted.
+
 ## 0.1.2 - 2026-09-23
 
 ### Fixed

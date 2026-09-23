@@ -71,6 +71,7 @@ namespace SmartWeightPlate
 				if (invert == value)
 					return;
 				invert = value;
+				UpdatePortDescriptions();
 				Refresh();
 			}
 		}
@@ -136,6 +137,7 @@ namespace SmartWeightPlate
 			OnPickupablesChanged(null);
 			OnActivatorsChanged(null);
 			spawned = true;
+			UpdatePortDescriptions();
 			Refresh();
 		}
 
@@ -160,6 +162,7 @@ namespace SmartWeightPlate
 			lowThreshold = other.lowThreshold;
 			highThreshold = other.highThreshold;
 			invert = other.invert;
+			UpdatePortDescriptions();
 			Refresh();
 		}
 
@@ -214,6 +217,24 @@ namespace SmartWeightPlate
 		// ---- latch, signal, visuals ----
 
 		/// <summary>Re-evaluates the latch and pushes the signal, status item, and animation.</summary>
+		/// <summary>
+		/// The port's active/inactive lines in hover cards and the building's details come from
+		/// this instance's LogicPorts entry, so they can follow the invert setting.
+		/// </summary>
+		private void UpdatePortDescriptions()
+		{
+			var ports = logicPorts?.outputPortInfo;
+			if (ports == null)
+				return;
+			for (int i = 0; i < ports.Length; i++)
+			{
+				if (ports[i].id != PortId)
+					continue;
+				ports[i].activeDescription = invert ? ModStrings.PortActiveInverted : ModStrings.PortActive;
+				ports[i].inactiveDescription = invert ? ModStrings.PortInactiveInverted : ModStrings.PortInactive;
+			}
+		}
+
 		private void Refresh()
 		{
 			if (!spawned || logicPorts == null)

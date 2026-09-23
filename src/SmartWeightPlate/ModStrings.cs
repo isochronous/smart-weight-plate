@@ -18,6 +18,8 @@ namespace SmartWeightPlate
 		public const string PortName = "Weight Thresholds";
 		public static readonly string PortActive = "Sends a " + Green + " when the weight is at or below the <b>Low Threshold</b>, until the <b>High Threshold</b> is reached";
 		public static readonly string PortInactive = "Sends a " + Red + " when the weight is at or above the <b>High Threshold</b>, until the <b>Low Threshold</b> is reached";
+		public static readonly string PortActiveInverted = "Sends a " + Green + " when the weight is at or above the <b>High Threshold</b>, until the <b>Low Threshold</b> is reached";
+		public static readonly string PortInactiveInverted = "Sends a " + Red + " when the weight is at or below the <b>Low Threshold</b>, until the <b>High Threshold</b> is reached";
 
 		// Vanilla activation-range side screen (the two-slider panel the reservoirs use).
 		public const string RangeTitle = "Weight Thresholds";
