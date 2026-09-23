@@ -11,7 +11,6 @@ The plate weighs whatever sits on the tile above it, exactly like the vanilla We
 [*]Supports the copy-settings tool; all settings are saved with the building.
 [/list]
 
-Typical use: keep a debris pile between two limits, so an auto-sweeper or conveyor loader tops it up only after it has run low, instead of chattering around a single threshold.
 
 Unlocked by [b]Advanced Automation[/b]. Costs 75 kg Refined Metal. Found under Automation > Sensors, next to the vanilla Weight Plate.
 
