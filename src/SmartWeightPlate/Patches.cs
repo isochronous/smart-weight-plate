@@ -44,5 +44,31 @@ namespace SmartWeightPlate
 				PUIUtils.AddSideScreenContent<SmartWeightPlateSideScreen>();
 			}
 		}
+
+		// The vanilla range screen sets its two text boxes' min/max only once, in OnSpawn,
+		// from whichever target it showed first. Every vanilla target is 0-100 %, so the
+		// boxes clamp typed values to 100 on a plate that goes to 2000 kg (and would accept
+		// 2000 on a reservoir after showing a plate). Refresh the range on every target.
+		[HarmonyPatch(typeof(ActiveRangeSideScreen), nameof(ActiveRangeSideScreen.SetTarget))]
+		public static class ActiveRangeSideScreen_SetTarget_Patch
+		{
+			public static void Postfix(ActiveRangeSideScreen __instance, IActivationRangeTarget ___target,
+				KNumberInputField ___activateValueLabel, KNumberInputField ___deactivateValueLabel)
+			{
+				if (___target == null)
+					return;
+				foreach (var label in new[] { ___activateValueLabel, ___deactivateValueLabel })
+				{
+					if (label == null)
+						continue;
+					label.minValue = ___target.MinValue;
+					label.maxValue = ___target.MaxValue;
+					// Make sure the box can hold every digit of the largest allowed value.
+					int digits = ___target.MaxValue.ToString().Length;
+					if (label.field != null && label.field.characterLimit > 0 && label.field.characterLimit < digits)
+						label.field.characterLimit = digits;
+				}
+			}
+		}
 	}
 }

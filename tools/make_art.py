@@ -21,7 +21,7 @@ from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "common", "tools", "MakeKanim"))
-from kanim_writer import Sprite, write_kanim  # noqa: E402
+from kanim_writer import Sprite, place_outline, write_kanim  # noqa: E402
 
 NAME = "smart_weight_plate"
 OUT = os.path.join(ROOT, "src", "SmartWeightPlate", "anim", "assets", NAME)
@@ -94,7 +94,7 @@ def main():
     symbols = {
         "body": [shrink(body, k), shrink(green_variant(body), k)],
         "cap": [shrink(cap, k)],
-        "place": [whole],
+        "place": [shrink(place_outline(src), k)],
         "ui": [whole],
     }
     anims = {}

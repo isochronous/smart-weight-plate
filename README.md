@@ -2,7 +2,7 @@
 
 An [Oxygen Not Included](https://www.klei.com/games/oxygen-not-included) mod that adds a **Smart Weight Plate**: a weight plate with a low and a high threshold, so its signal behaves like a Liquid or Gas Reservoir's instead of a single cut-off.
 
-Status: **work in progress**. The building has its own art: `publish/sprite.png` is cut into a body (red and green panel variants) and a moving cap, and built into the kanim under `src/SmartWeightPlate/anim/assets/smart_weight_plate/` by `tools/make_art.py`, so it shows the signal colour and sinks when pressed just like the vanilla plate. The same sprite is the construction ghost and build-menu icon.
+Status: **work in progress**. The building has its own art: `publish/sprite.png` is cut into a body (red and green panel variants) and a moving cap, and built into the kanim under `src/SmartWeightPlate/anim/assets/smart_weight_plate/` by `tools/make_art.py`, so it shows the signal colour and sinks when pressed just like the vanilla plate. The same sprite is the build-menu icon; the construction ghost is its white outline, as in vanilla art.
 
 ## What it does
 
@@ -46,4 +46,4 @@ A successful build merges [PLib](https://github.com/peterhaneve/ONIMods/tree/mai
 - `SmartWeightPlate` (the building component) measures mass the same three ways as the vanilla `LogicMassSensor`, re-evaluates its latch every 200 ms, and sends on its own output port. It implements `IActivationRangeTarget`, so the vanilla `ActiveRangeSideScreen` supplies the threshold sliders with no custom UI. Note that interface's naming is inverted: `ActivateValue` is the upper slider (high threshold) and `DeactivateValue` the lower one, the same swap the reservoirs' `SmartReservoir` component makes.
 - `SmartWeightPlateSideScreen` is a small PLib panel (current weight, invert checkbox) sorted above the vanilla slider panel.
 - Compatibility: if [Better Automation Overlay](https://steamcommunity.com/sharedfiles/filedetails/?id=1878896484) is installed, a postfix on its range label (applied in `OnAllModsLoaded`, skipped when the mod is absent) shows the plate's thresholds as `0 - 35 kg` instead of that mod's default percentages.
-- Patch points: `GeneratedBuildings.LoadGeneratedBuildings` (plan screen), `Db.Initialize` (tech), `DetailsScreen.OnPrefabInit` (side screen registration).
+- Patch points: `GeneratedBuildings.LoadGeneratedBuildings` (plan screen), `Db.Initialize` (tech), `DetailsScreen.OnPrefabInit` (side screen registration), `ActiveRangeSideScreen.SetTarget` (the vanilla screen sets its text boxes' range only once, from the first target it shows, so without this they clamp typed values to 100).
