@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.4 - 2026-10-03
 
 - Internal cleanup; the plate behaves as before.
 
