@@ -21,7 +21,7 @@ namespace SmartWeightPlate
 		[HarmonyPatch(typeof(Db), nameof(Db.Initialize))]
 		public static class Db_Initialize_Patch
 		{
-			public const string TechId = "LogicCircuits";
+			private const string TechId = "LogicCircuits";
 
 			public static void Postfix()
 			{
@@ -52,7 +52,7 @@ namespace SmartWeightPlate
 		[HarmonyPatch(typeof(ActiveRangeSideScreen), nameof(ActiveRangeSideScreen.SetTarget))]
 		public static class ActiveRangeSideScreen_SetTarget_Patch
 		{
-			public static void Postfix(ActiveRangeSideScreen __instance, IActivationRangeTarget ___target,
+			public static void Postfix(IActivationRangeTarget ___target,
 				KNumberInputField ___activateValueLabel, KNumberInputField ___deactivateValueLabel)
 			{
 				if (___target == null)

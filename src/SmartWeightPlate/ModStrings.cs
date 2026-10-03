@@ -22,7 +22,7 @@ namespace SmartWeightPlate
 		public static readonly string PortInactiveInverted = "Sends a " + Red + " when the weight is at or below the <b>Low Threshold</b>, until the <b>High Threshold</b> is reached";
 
 		// Vanilla activation-range side screen (the two-slider panel the reservoirs use).
-		public const string RangeTitle = "Weight Thresholds";
+		public const string RangeTitle = PortName;
 		public const string HighLabel = "High Threshold:";
 		public const string LowLabel = "Low Threshold:";
 		// Format args: {0} this slider's value, {1} the other slider's value.
@@ -32,7 +32,6 @@ namespace SmartWeightPlate
 		public static readonly string LowTooltipInverted = "Sends a " + Red + " once the weight drops to <b>{0} kg</b>, until it reaches <b>{1} kg (High Threshold)</b>";
 
 		// This mod's own side screen.
-		public const string SideScreenTitleKey = "STRINGS.UI.UISIDESCREENS.SMART_WEIGHT_PLATE_SIDE_SCREEN.TITLE";
 		public const string SideScreenTitle = "Smart Weight Plate";
 		public const string CurrentWeight = "Current Weight: {0}";
 		public const string Invert = "Invert Signal";
@@ -43,7 +42,6 @@ namespace SmartWeightPlate
 			Strings.Add(PrefabKey + "NAME", Name);
 			Strings.Add(PrefabKey + "DESC", Desc);
 			Strings.Add(PrefabKey + "EFFECT", Effect);
-			Strings.Add(SideScreenTitleKey, SideScreenTitle);
 		}
 	}
 }

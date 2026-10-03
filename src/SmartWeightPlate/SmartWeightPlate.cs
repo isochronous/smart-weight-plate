@@ -57,9 +57,6 @@ namespace SmartWeightPlate
 
 		public float CurrentValue => massSolid + massPickupables + massActivators;
 
-		/// <summary>True while the latch is in the heavy state (before inversion).</summary>
-		public bool IsHeavy => heavy;
-
 		/// <summary>The signal currently on the output port.</summary>
 		public bool IsSignalOn => heavy == invert;
 
@@ -216,7 +213,6 @@ namespace SmartWeightPlate
 
 		// ---- latch, signal, visuals ----
 
-		/// <summary>Re-evaluates the latch and pushes the signal, status item, and animation.</summary>
 		/// <summary>
 		/// The port's active/inactive lines in hover cards and the building's details come from
 		/// this instance's LogicPorts entry, so they can follow the invert setting.
@@ -235,6 +231,7 @@ namespace SmartWeightPlate
 			}
 		}
 
+		/// <summary>Re-evaluates the latch and pushes the signal, status item, and animation.</summary>
 		private void Refresh()
 		{
 			if (!spawned || logicPorts == null)

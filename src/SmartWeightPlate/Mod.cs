@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using HarmonyLib;
 using KMod;
 using PeterHan.PLib.Core;
@@ -37,7 +38,8 @@ namespace SmartWeightPlate
 		{
 			try
 			{
-				var getSetting = AccessTools.Method(AccessTools.TypeByName(LabelType), "GetSetting");
+				Type labelType = AccessTools.TypeByName(LabelType);
+				MethodInfo getSetting = labelType != null ? AccessTools.Method(labelType, "GetSetting") : null;
 				if (getSetting == null)
 					return;
 				harmony.Patch(getSetting, postfix: new HarmonyMethod(typeof(BetterAutomationOverlayCompat), nameof(Postfix)));
