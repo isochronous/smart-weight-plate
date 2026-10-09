@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.0 - 2026-10-09
 
 ### Changed
 - The signal now matches the vanilla Weight Plate by default: green once the weight reaches the High Threshold, red once it drops to the Low Threshold. Plates built with earlier versions keep the behaviour they had: their Invert setting is flipped once, the first time the save is loaded with this version.
