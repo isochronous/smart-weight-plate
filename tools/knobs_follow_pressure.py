@@ -7,7 +7,9 @@ What it changes, and why:
   but the plate's signal and its pressure are independent (the invert option), so the off_
   transitions get the same motion with the red light, and both pressed idles hold the swapped pose.
 - The transitions are faster, 10 frames at 30 fps instead of 20, with an ease-in curve (the knobs
-  start slowly and accelerate), generated from the artist's start and end poses.
+  start slowly and accelerate), generated from the artist's start and end poses. The button sinks
+  and rises with the same curve (the export switched it between two heights in one frame) and by
+  less, so its top stays visible over the base when pressed, like the vanilla plate.
 - The button draws behind the plate: it is the last element of every frame. Kanimal's convention,
   which the game follows, is that the first element of a frame is the frontmost.
 - The _fg suffix the artist used makes kanimal set the Foreground flag on those symbols, which
@@ -32,6 +34,9 @@ ANIM = os.path.join(ROOT, "smart_weight_plate_anim.bytes")
 BUILD = os.path.join(ROOT, "smart_weight_plate_build.bytes")
 TRANSITION_FRAMES = 10
 FG_FLAG = 8
+# How far the button sinks when pressed, in animation units. The artist's export used 56, which
+# puts the whole button behind the base; 32 leaves its top visible over the base, like the vanilla plate.
+BUTTON_PRESS_TRAVEL = 32.0
 
 # ---------------------------------------------------------------- anim
 b = open(ANIM, "rb").read()
@@ -77,7 +82,7 @@ def transition(first, last, light_frame):
         els = []
         for a, z in zip(first[4], last[4]):
             el = list(z)
-            if sym_is(el, "slider_fg"):
+            if sym_is(el, "slider_fg") or sym_is(el, "button"):
                 for k in (12, 13):   # m5, m6: translation
                     el[k] = a[k] + (z[k] - a[k]) * t
             if sym_is(el, "light_fg"):
@@ -94,6 +99,15 @@ for el in release_last[4]:
     if sym_is(el, "slider_fg"): el[12], el[13] = rest[el[1]]
 for el in press_first[4]:
     if sym_is(el, "slider_fg"): el[12], el[13] = rest[el[1]]
+# The button: up in the raised idle, BUTTON_PRESS_TRAVEL lower when pressed, moving through the transitions.
+up_y = next(el[13] for el in by_name["on_up"][3][0][4] if sym_is(el, "button"))
+down_y = up_y + BUTTON_PRESS_TRAVEL
+for pose, y in ((press_first, up_y), (press_last, down_y), (release_first, down_y), (release_last, up_y)):
+    for el in pose[4]:
+        if sym_is(el, "button"): el[13] = y
+for idle in ("on_down", "off_down"):
+    for el in by_name[idle][3][0][4]:
+        if sym_is(el, "button"): el[13] = down_y
 by_name["on_down_pre"][3] = transition(press_first, press_last, LIGHT_ON)
 by_name["off_down_pre"][3] = transition(press_first, press_last, LIGHT_OFF)
 by_name["on_up_pre"][3] = transition(release_first, release_last, LIGHT_ON)
