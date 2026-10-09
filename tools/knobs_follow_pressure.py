@@ -6,8 +6,8 @@ What it changes, and why:
 - The knob motion follows pressure, not the signal. The artist keyed it to the on_ transitions,
   but the plate's signal and its pressure are independent (the invert option), so the off_
   transitions get the same motion with the red light, and both pressed idles hold the swapped pose.
-- The transitions are faster, 10 frames at 30 fps instead of 20, with an ease-in curve (the knobs
-  start slowly and accelerate), generated from the artist's start and end poses. The button sinks
+- The transitions are faster, 10 frames at 30 fps instead of 20, with a cubic ease-in (the knobs
+  start slowly and slam into the far end), generated from the artist's start and end poses. The button sinks
   and rises with the same curve (the export switched it between two heights in one frame) and by
   less, so its top stays visible over the base when pressed, like the vanilla plate.
 - The button draws behind the plate: it is the last element of every frame. Kanimal's convention,
@@ -72,7 +72,8 @@ by_name = {a[0]: a for a in anims}
 def sym_is(el, n): return names.get(el[0]) == n
 LIGHT_OFF, LIGHT_ON = 0, 1
 
-def ease_in(t): return t * t
+# Slow to start, then slams into the far end: a cubic ease-in.
+def ease_in(t): return t * t * t
 
 def transition(first, last, light_frame):
     """Frames from the first pose to the last pose: knobs eased in, everything else from the last pose."""
