@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+- The signal now matches the vanilla Weight Plate by default: green once the weight reaches the High Threshold, red once it drops to the Low Threshold. Plates built with earlier versions keep the behaviour they had: their Invert setting is flipped once, the first time the save is loaded with this version.
+- New art by 3GuB: two knobs on the plate slide across when it is pressed and back when it is released, and the button sits behind the plate.
+- The knobs move only when the pressure state changes; a signal change alone, such as toggling Invert, only switches the light.
+
 ## 0.1.4 - 2026-10-03
 
 - Internal cleanup; the plate behaves as before.

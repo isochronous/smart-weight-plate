@@ -1,4 +1,5 @@
 #pragma warning disable 649, 169 // [MyCmpGet]/[MyCmpAdd] fields are populated by the game via reflection
+using System.Runtime.Serialization;
 using KSerialization;
 using UnityEngine;
 
@@ -31,6 +32,16 @@ namespace SmartWeightPlate
 		/// <summary>Latch: set once the weight reaches the high threshold, cleared once it drops to the low one.</summary>
 		[Serialize] private bool heavy;
 		[Serialize] private bool invert;
+		/// <summary>
+		/// Which meaning "invert" has. Versions before 0.2.0 sent green while light; since 0.2.0 the
+		/// default matches the vanilla plate (green while heavy) and "invert" means the opposite of
+		/// that. A plate from an older save has no version in it and keeps the sentinel, so it is
+		/// migrated once by flipping its invert flag, which preserves the signal it was sending.
+		/// </summary>
+		[Serialize] private int settingsVersion = NoVersion;
+		private const int NoVersion = -1;
+		private const int CurrentVersion = 1;
+		private bool loadedFromSave;
 
 		[MyCmpGet] private LogicPorts logicPorts;
 		[MyCmpGet] private KSelectable selectable;
@@ -57,8 +68,8 @@ namespace SmartWeightPlate
 
 		public float CurrentValue => massSolid + massPickupables + massActivators;
 
-		/// <summary>The signal currently on the output port.</summary>
-		public bool IsSignalOn => heavy == invert;
+		/// <summary>The signal currently on the output port: green while heavy, like the vanilla plate, unless inverted.</summary>
+		public bool IsSignalOn => heavy != invert;
 
 		public bool Invert
 		{
@@ -119,9 +130,22 @@ namespace SmartWeightPlate
 			Subscribe((int)GameHashes.CopySettings, OnCopySettingsDelegate);
 		}
 
+		[OnDeserialized]
+		private void OnDeserialized()
+		{
+			loadedFromSave = true;
+		}
+
 		protected override void OnSpawn()
 		{
 			base.OnSpawn();
+			if (settingsVersion < CurrentVersion)
+			{
+				// Loaded from a save written before the signal default changed: keep the signal it was sending.
+				if (loadedFromSave)
+					invert = !invert;
+				settingsVersion = CurrentVersion;
+			}
 			int cell = SensedCell;
 			solidChangedEntry = GameScenePartitioner.Instance.Add("SmartWeightPlate.SolidChanged", gameObject, cell,
 				GameScenePartitioner.Instance.solidChangedLayer, OnSolidChanged);
@@ -267,8 +291,10 @@ namespace SmartWeightPlate
 		}
 
 		/// <summary>
-		/// Same animation set as the vanilla plate: "down" while the latch is heavy, "up"
-		/// otherwise, in the on or off colour of the current signal.
+		/// Same animation set as the vanilla plate: "down" while the latch is heavy, "up" otherwise,
+		/// in the on or off colour of the current signal. The "_pre" transitions carry the knob
+		/// motion, so they are played only when the pressure state changes; a signal change alone
+		/// (the invert option) switches the light without moving the knobs.
 		/// </summary>
 		private void UpdateVisualState(bool on)
 		{
@@ -278,7 +304,7 @@ namespace SmartWeightPlate
 			if (visualsInitialized && pressed == wasPressed && on == wasOn)
 				return;
 			string state = (on ? "on_" : "off_") + (pressed ? "down" : "up");
-			if (!visualsInitialized)
+			if (!visualsInitialized || pressed == wasPressed)
 			{
 				animController.Play(state);
 			}

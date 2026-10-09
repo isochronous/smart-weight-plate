@@ -8,12 +8,12 @@ Status: **work in progress**. The building has its own art: `publish/sprite.png`
 
 The plate weighs whatever sits on the tile above it, exactly like the vanilla Weight Plate: a solid tile, loose items and debris, and Duplicants or critters standing on it. Gases and liquids do not count.
 
-- Sends a **green** signal once the weight drops to the **Low Threshold**, and keeps sending it until the weight reaches the **High Threshold**.
-- Sends a **red** signal once the weight reaches the High Threshold, and keeps sending it until the weight drops to the Low Threshold.
+- Sends a **green** signal once the weight reaches the **High Threshold**, and keeps sending it until the weight drops to the **Low Threshold**, like the vanilla Weight Plate with a band instead of a single cut-off.
+- Sends a **red** signal once the weight drops to the Low Threshold, and keeps sending it until the weight reaches the High Threshold.
 - Comparisons are inclusive, as with the reservoirs. If the two thresholds are equal the plate acts as a plain "at or above" threshold.
 - **Invert Signal** swaps green and red without a NOT gate.
 - Thresholds run from 0 to 2000 kg in whole kilograms, using the same two-slider panel as the reservoirs. The plate's own panel shows the current weight and the invert checkbox.
-- The plate looks pressed while it is holding in the heavy state, and lights up with the signal it is sending.
+- The plate looks pressed while it is holding in the heavy state, its two knobs slide across when it is pressed and back when it is released, and its light shows the signal it is sending.
 - Supports the copy-settings tool; all settings are saved with the building.
 
 Typical use: keep a debris pile between two limits, so an auto-sweeper or conveyor loader tops it up only after it has run low, instead of chattering around a single threshold.

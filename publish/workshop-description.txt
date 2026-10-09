@@ -4,8 +4,8 @@ The plate weighs whatever sits on the tile above it, exactly like the vanilla We
 
 [h2]What it does[/h2]
 [list]
-[*]Sends a [b]green[/b] signal once the weight drops to the [b]Low Threshold[/b], and keeps sending it until the weight reaches the [b]High Threshold[/b].
-[*]Sends a [b]red[/b] signal once the weight reaches the High Threshold, and keeps sending it until the weight drops to the Low Threshold.
+[*]Sends a [b]green[/b] signal once the weight reaches the [b]High Threshold[/b], and keeps sending it until the weight drops to the [b]Low Threshold[/b], like the vanilla Weight Plate with a band instead of a single cut-off.
+[*]Sends a [b]red[/b] signal once the weight drops to the Low Threshold, and keeps sending it until the weight reaches the High Threshold.
 [*][b]Invert Signal[/b] swaps green and red without a NOT gate.
 [*]Thresholds run from 0 to 2000 kg, using the same two-slider panel as the reservoirs. The plate's own panel shows the current weight and the invert checkbox.
 [*]Supports the copy-settings tool; all settings are saved with the building.
