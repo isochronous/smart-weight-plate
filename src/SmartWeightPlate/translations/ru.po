@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included\n"
+"POT Version: 2.0\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.DESC
+msgctxt "STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.DESC"
+msgid "A weight plate that provides high and low thresholds, similar to smart batteries and reservoirs."
+msgstr "Нажимная пластина с верхним и нижним порогами, как у \"умных\" батареек и резервуаров."
+
+#. STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.EFFECT
+msgctxt "STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.EFFECT"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> once the weight on the plate reaches the <b>High Threshold</b>, and keeps sending it until the weight drops to the <b>Low Threshold</b>.\n\nCannot be triggered by <link=\"ELEMENTSGAS\">Gas</link> or <link=\"ELEMENTSLIQUID\">Liquids</link>."
+msgstr "Отправляет <b><style=\"logic_on\">зеленый сигнал</style></b>, когда вес на пластине достигает <b>верхнего порога</b>, и продолжает отправлять его, пока вес не опустится до <b>нижнего порога</b>.\n\nНе срабатывает от <link=\"ELEMENTSGAS\">газов</link> или <link=\"ELEMENTSLIQUID\">жидкостей</link>."
+
+#. STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT
+msgctxt "STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT"
+msgid "Weight Thresholds"
+msgstr "Пороги веса"
+
+#. STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT_ACTIVE
+msgctxt "STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT_ACTIVE"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> when the weight is at or above the <b>High Threshold</b>, until the <b>Low Threshold</b> is reached"
+msgstr "Отправляет <b><style=\"logic_on\">зеленый сигнал</style></b>, когда вес достигает <b>верхнего порога</b> или превышает его, пока не будет достигнут <b>нижний порог</b>"
+
+#. STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT_ACTIVE_INVERTED
+msgctxt "STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT_ACTIVE_INVERTED"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> when the weight is at or below the <b>Low Threshold</b>, until the <b>High Threshold</b> is reached"
+msgstr "Отправляет <b><style=\"logic_on\">зеленый сигнал</style></b>, когда вес опускается до <b>нижнего порога</b> или ниже, пока не будет достигнут <b>верхний порог</b>"
+
+#. STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT_INACTIVE
+msgctxt "STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT_INACTIVE"
+msgid "Sends a <b><style=\"logic_off\">Red Signal</style></b> when the weight is at or below the <b>Low Threshold</b>, until the <b>High Threshold</b> is reached"
+msgstr "Отправляет <b><style=\"logic_off\">красный сигнал</style></b>, когда вес опускается до <b>нижнего порога</b> или ниже, пока не будет достигнут <b>верхний порог</b>"
+
+#. STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT_INACTIVE_INVERTED
+msgctxt "STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT_INACTIVE_INVERTED"
+msgid "Sends a <b><style=\"logic_off\">Red Signal</style></b> when the weight is at or above the <b>High Threshold</b>, until the <b>Low Threshold</b> is reached"
+msgstr "Отправляет <b><style=\"logic_off\">красный сигнал</style></b>, когда вес достигает <b>верхнего порога</b> или превышает его, пока не будет достигнут <b>нижний порог</b>"
+
+#. STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.NAME
+msgctxt "STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.NAME"
+msgid "<link=\"SMARTWEIGHTPLATE\">Smart Weight Plate</link>"
+msgstr "<link=\"SMARTWEIGHTPLATE\">\"Умная\" нажимная пластина</link>"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.CURRENT_WEIGHT
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.CURRENT_WEIGHT"
+msgid "Current Weight: {0}"
+msgstr "Текущий вес: {0}"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.HIGH_LABEL
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.HIGH_LABEL"
+msgid "High Threshold:"
+msgstr "Верхний порог:"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.HIGH_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.HIGH_TOOLTIP"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> once the weight reaches <b>{0} kg</b>, until it drops to <b>{1} kg (Low Threshold)</b>"
+msgstr "Отправляет <b><style=\"logic_on\">зеленый сигнал</style></b>, когда вес достигает <b>{0} кг</b>, пока он не опустится до <b>{1} кг (нижний порог)</b>"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.HIGH_TOOLTIP_INVERTED
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.HIGH_TOOLTIP_INVERTED"
+msgid "Sends a <b><style=\"logic_off\">Red Signal</style></b> once the weight reaches <b>{0} kg</b>, until it drops to <b>{1} kg (Low Threshold)</b>"
+msgstr "Отправляет <b><style=\"logic_off\">красный сигнал</style></b>, когда вес достигает <b>{0} кг</b>, пока он не опустится до <b>{1} кг (нижний порог)</b>"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.INVERT
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.INVERT"
+msgid "Invert Signal"
+msgstr "Инвертировать сигнал"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.INVERT_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.INVERT_TOOLTIP"
+msgid "Swap the output: <b><style=\"logic_on\">Green Signal</style></b> while the weight is low, <b><style=\"logic_off\">Red Signal</style></b> once it reaches the High Threshold"
+msgstr "Меняет выход местами: <b><style=\"logic_on\">зеленый сигнал</style></b>, пока вес низкий, и <b><style=\"logic_off\">красный сигнал</style></b>, когда он достигает верхнего порога"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.LOW_LABEL
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.LOW_LABEL"
+msgid "Low Threshold:"
+msgstr "Нижний порог:"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.LOW_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.LOW_TOOLTIP"
+msgid "Sends a <b><style=\"logic_off\">Red Signal</style></b> once the weight drops to <b>{0} kg</b>, until it reaches <b>{1} kg (High Threshold)</b>"
+msgstr "Отправляет <b><style=\"logic_off\">красный сигнал</style></b>, когда вес опускается до <b>{0} кг</b>, пока он не достигнет <b>{1} кг (верхний порог)</b>"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.LOW_TOOLTIP_INVERTED
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.LOW_TOOLTIP_INVERTED"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> once the weight drops to <b>{0} kg</b>, until it reaches <b>{1} kg (High Threshold)</b>"
+msgstr "Отправляет <b><style=\"logic_on\">зеленый сигнал</style></b>, когда вес опускается до <b>{0} кг</b>, пока он не достигнет <b>{1} кг (верхний порог)</b>"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.TITLE
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.TITLE"
+msgid "Smart Weight Plate"
+msgstr "\"Умная\" нажимная пластина"

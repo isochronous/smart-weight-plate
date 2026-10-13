@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included\n"
+"POT Version: 2.0\n"
+"Language: ko_KR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.DESC
+msgctxt "STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.DESC"
+msgid "A weight plate that provides high and low thresholds, similar to smart batteries and reservoirs."
+msgstr "스마트 배터리 및 저장소와 같이 높은 임계값과 낮은 임계값을 제공하는 중량 판입니다."
+
+#. STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.EFFECT
+msgctxt "STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.EFFECT"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> once the weight on the plate reaches the <b>High Threshold</b>, and keeps sending it until the weight drops to the <b>Low Threshold</b>.\n\nCannot be triggered by <link=\"ELEMENTSGAS\">Gas</link> or <link=\"ELEMENTSLIQUID\">Liquids</link>."
+msgstr "판 위의 중량이 <b>높은 임계값</b>에 도달하면 <b><style=\"logic_on\">녹색 신호</style></b>를 보내고, 중량이 <b>낮은 임계값</b>까지 떨어질 때까지 계속 보냅니다.\n\n<link=\"ELEMENTSGAS\">기체</link> 또는 <link=\"ELEMENTSLIQUID\">액체</link>로는 작동하지 않습니다."
+
+#. STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT
+msgctxt "STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT"
+msgid "Weight Thresholds"
+msgstr "중량 임계값"
+
+#. STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT_ACTIVE
+msgctxt "STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT_ACTIVE"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> when the weight is at or above the <b>High Threshold</b>, until the <b>Low Threshold</b> is reached"
+msgstr "중량이 <b>높은 임계값</b> 이상이면 <b>낮은 임계값</b>에 도달할 때까지 <b><style=\"logic_on\">녹색 신호</style></b>를 보냅니다"
+
+#. STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT_ACTIVE_INVERTED
+msgctxt "STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT_ACTIVE_INVERTED"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> when the weight is at or below the <b>Low Threshold</b>, until the <b>High Threshold</b> is reached"
+msgstr "중량이 <b>낮은 임계값</b> 이하이면 <b>높은 임계값</b>에 도달할 때까지 <b><style=\"logic_on\">녹색 신호</style></b>를 보냅니다"
+
+#. STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT_INACTIVE
+msgctxt "STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT_INACTIVE"
+msgid "Sends a <b><style=\"logic_off\">Red Signal</style></b> when the weight is at or below the <b>Low Threshold</b>, until the <b>High Threshold</b> is reached"
+msgstr "중량이 <b>낮은 임계값</b> 이하이면 <b>높은 임계값</b>에 도달할 때까지 <b><style=\"logic_off\">적색 신호</style></b>를 보냅니다"
+
+#. STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT_INACTIVE_INVERTED
+msgctxt "STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.LOGIC_PORT_INACTIVE_INVERTED"
+msgid "Sends a <b><style=\"logic_off\">Red Signal</style></b> when the weight is at or above the <b>High Threshold</b>, until the <b>Low Threshold</b> is reached"
+msgstr "중량이 <b>높은 임계값</b> 이상이면 <b>낮은 임계값</b>에 도달할 때까지 <b><style=\"logic_off\">적색 신호</style></b>를 보냅니다"
+
+#. STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.NAME
+msgctxt "STRINGS.BUILDINGS.PREFABS.SMARTWEIGHTPLATE.NAME"
+msgid "<link=\"SMARTWEIGHTPLATE\">Smart Weight Plate</link>"
+msgstr "<link=\"SMARTWEIGHTPLATE\">스마트 중량 판</link>"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.CURRENT_WEIGHT
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.CURRENT_WEIGHT"
+msgid "Current Weight: {0}"
+msgstr "현재 중량: {0}"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.HIGH_LABEL
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.HIGH_LABEL"
+msgid "High Threshold:"
+msgstr "높은 임계값:"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.HIGH_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.HIGH_TOOLTIP"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> once the weight reaches <b>{0} kg</b>, until it drops to <b>{1} kg (Low Threshold)</b>"
+msgstr "중량이 <b>{0} kg</b>에 도달하면 <b>{1} kg (낮은 임계값)</b>까지 떨어질 때까지 <b><style=\"logic_on\">녹색 신호</style></b>를 보냅니다"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.HIGH_TOOLTIP_INVERTED
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.HIGH_TOOLTIP_INVERTED"
+msgid "Sends a <b><style=\"logic_off\">Red Signal</style></b> once the weight reaches <b>{0} kg</b>, until it drops to <b>{1} kg (Low Threshold)</b>"
+msgstr "중량이 <b>{0} kg</b>에 도달하면 <b>{1} kg (낮은 임계값)</b>까지 떨어질 때까지 <b><style=\"logic_off\">적색 신호</style></b>를 보냅니다"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.INVERT
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.INVERT"
+msgid "Invert Signal"
+msgstr "신호 반전"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.INVERT_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.INVERT_TOOLTIP"
+msgid "Swap the output: <b><style=\"logic_on\">Green Signal</style></b> while the weight is low, <b><style=\"logic_off\">Red Signal</style></b> once it reaches the High Threshold"
+msgstr "출력을 바꿉니다: 중량이 낮은 동안에는 <b><style=\"logic_on\">녹색 신호</style></b>를, 높은 임계값에 도달하면 <b><style=\"logic_off\">적색 신호</style></b>를 보냅니다"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.LOW_LABEL
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.LOW_LABEL"
+msgid "Low Threshold:"
+msgstr "낮은 임계값:"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.LOW_TOOLTIP
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.LOW_TOOLTIP"
+msgid "Sends a <b><style=\"logic_off\">Red Signal</style></b> once the weight drops to <b>{0} kg</b>, until it reaches <b>{1} kg (High Threshold)</b>"
+msgstr "중량이 <b>{0} kg</b>까지 떨어지면 <b>{1} kg (높은 임계값)</b>에 도달할 때까지 <b><style=\"logic_off\">적색 신호</style></b>를 보냅니다"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.LOW_TOOLTIP_INVERTED
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.LOW_TOOLTIP_INVERTED"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> once the weight drops to <b>{0} kg</b>, until it reaches <b>{1} kg (High Threshold)</b>"
+msgstr "중량이 <b>{0} kg</b>까지 떨어지면 <b>{1} kg (높은 임계값)</b>에 도달할 때까지 <b><style=\"logic_on\">녹색 신호</style></b>를 보냅니다"
+
+#. STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.TITLE
+msgctxt "STRINGS.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN.TITLE"
+msgid "Smart Weight Plate"
+msgstr "스마트 중량 판"

@@ -3,7 +3,7 @@
 ## Unreleased
 
 ### Added
-- Chinese (Simplified) translation. Translations load from `translations/<locale>.po`; the template for other languages is `translations/SmartWeightPlate.pot`.
+- Chinese (Simplified), Korean and Russian translations. Translations load from `translations/<locale>.po`; the template for other languages is `translations/SmartWeightPlate.pot`.
 
 ## 0.2.0 - 2026-10-09
 
