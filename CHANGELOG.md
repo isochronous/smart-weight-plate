@@ -5,6 +5,9 @@
 ### Added
 - Chinese (Simplified), Korean and Russian translations. Translations load from `translations/<locale>.po`; the template for other languages is `translations/SmartWeightPlate.pot`.
 
+### Changed
+- The building description now says what the plate is: a weight plate with high and low thresholds, like smart batteries and reservoirs.
+
 ## 0.2.0 - 2026-10-09
 
 ### Changed
