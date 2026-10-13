@@ -3,6 +3,7 @@ using System.Reflection;
 using HarmonyLib;
 using PeterHan.PLib.UI;
 using UnityEngine;
+using SIDE_SCREEN = SmartWeightPlate.ModStrings.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN;
 
 namespace SmartWeightPlate
 {
@@ -31,7 +32,7 @@ namespace SmartWeightPlate
 
 		public override string GetTitle()
 		{
-			return ModStrings.SideScreenTitle;
+			return SIDE_SCREEN.TITLE;
 		}
 
 		/// <summary>Higher sorts first; the vanilla range screen is 0.</summary>
@@ -87,8 +88,8 @@ namespace SmartWeightPlate
 			}.AddOnRealize(go => weightLabel = go));
 			root.AddChild(new PCheckBox("Invert")
 			{
-				Text = ModStrings.Invert,
-				ToolTip = ModStrings.InvertTooltip,
+				Text = SIDE_SCREEN.INVERT,
+				ToolTip = SIDE_SCREEN.INVERT_TOOLTIP,
 				TextStyle = PUITuning.Fonts.TextDarkStyle,
 				TextAlignment = TextAnchor.MiddleLeft,
 				CheckSize = CheckSize,
@@ -121,7 +122,7 @@ namespace SmartWeightPlate
 		{
 			if (weightLabel == null || target == null)
 				return;
-			PUIElements.SetText(weightLabel, string.Format(ModStrings.CurrentWeight, GameUtil.GetFormattedMass(target.CurrentValue)));
+			PUIElements.SetText(weightLabel, string.Format(SIDE_SCREEN.CURRENT_WEIGHT, GameUtil.GetFormattedMass(target.CurrentValue)));
 		}
 
 		/// <summary>

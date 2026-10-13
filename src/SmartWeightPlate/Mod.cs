@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using HarmonyLib;
+using Isochronous;
 using KMod;
 using PeterHan.PLib.Core;
 using UnityEngine;
@@ -14,7 +15,7 @@ namespace SmartWeightPlate
 		{
 			base.OnLoad(harmony);
 			PUtil.InitLibrary(false);
-			ModStrings.Register();
+			Translations.Register(harmony, typeof(ModStrings));
 			Debug.Log("[SmartWeightPlate] Loaded version " + typeof(SmartWeightPlateMod).Assembly.GetName().Version);
 		}
 

@@ -1,10 +1,12 @@
-Adds a Smart Weight Plate: a weight plate with a low and a high threshold, so its signal behaves like a Liquid or Gas Reservoir's instead of a single cut-off.
+Adds a Smart Weight Plate: a weight plate that provides high and low thresholds, similar to smart batteries and reservoirs.
+
+Typical use: stop a conveyor chute from refilling a pile once it reaches the high threshold, and let it refill again only after the pile has dropped to the low threshold; or stop a sweeper from collecting a pile once it has dropped to the low threshold, and let it collect again only once the pile is back at the high threshold. Either way the machine is not chattering around a single threshold.
 
 The plate weighs whatever sits on the tile above it, exactly like the vanilla Weight Plate: a solid tile, loose items and debris, and Duplicants or critters standing on it. Gases and liquids do not count.
 
 [h2]What it does[/h2]
 [list]
-[*]Sends a [b]green[/b] signal once the weight reaches the [b]High Threshold[/b], and keeps sending it until the weight drops to the [b]Low Threshold[/b], like the vanilla Weight Plate with a band instead of a single cut-off.
+[*]Sends a [b]green[/b] signal once the weight reaches the [b]High Threshold[/b], and keeps sending it until the weight drops to the [b]Low Threshold[/b], like a Smart Battery's band instead of a single cut-off.
 [*]Sends a [b]red[/b] signal once the weight drops to the Low Threshold, and keeps sending it until the weight reaches the High Threshold.
 [*][b]Invert Signal[/b] swaps green and red without a NOT gate.
 [*]Thresholds run from 0 to 2000 kg, using the same two-slider panel as the reservoirs. The plate's own panel shows the current weight and the invert checkbox.

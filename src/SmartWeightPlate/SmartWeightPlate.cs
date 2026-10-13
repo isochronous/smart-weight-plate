@@ -2,6 +2,8 @@
 using System.Runtime.Serialization;
 using KSerialization;
 using UnityEngine;
+using PREFAB = SmartWeightPlate.ModStrings.BUILDINGS.PREFABS.SMARTWEIGHTPLATE;
+using SIDE_SCREEN = SmartWeightPlate.ModStrings.UI.UISIDESCREENS.SMARTWEIGHTPLATE_SIDE_SCREEN;
 
 namespace SmartWeightPlate
 {
@@ -111,11 +113,11 @@ namespace SmartWeightPlate
 		public float MinValue => 0f;
 		public float MaxValue => MaxMass;
 		public bool UseWholeNumbers => true;
-		public string ActivationRangeTitleText => ModStrings.RangeTitle;
-		public string ActivateSliderLabelText => ModStrings.HighLabel;
-		public string DeactivateSliderLabelText => ModStrings.LowLabel;
-		public string ActivateTooltip => invert ? ModStrings.HighTooltipInverted : ModStrings.HighTooltip;
-		public string DeactivateTooltip => invert ? ModStrings.LowTooltipInverted : ModStrings.LowTooltip;
+		public string ActivationRangeTitleText => PREFAB.LOGIC_PORT;
+		public string ActivateSliderLabelText => SIDE_SCREEN.HIGH_LABEL;
+		public string DeactivateSliderLabelText => SIDE_SCREEN.LOW_LABEL;
+		public string ActivateTooltip => invert ? SIDE_SCREEN.HIGH_TOOLTIP_INVERTED : SIDE_SCREEN.HIGH_TOOLTIP;
+		public string DeactivateTooltip => invert ? SIDE_SCREEN.LOW_TOOLTIP_INVERTED : SIDE_SCREEN.LOW_TOOLTIP;
 
 		private static int Clamp(float value)
 		{
@@ -250,8 +252,8 @@ namespace SmartWeightPlate
 			{
 				if (ports[i].id != PortId)
 					continue;
-				ports[i].activeDescription = invert ? ModStrings.PortActiveInverted : ModStrings.PortActive;
-				ports[i].inactiveDescription = invert ? ModStrings.PortInactiveInverted : ModStrings.PortInactive;
+				ports[i].activeDescription = invert ? PREFAB.LOGIC_PORT_ACTIVE_INVERTED : PREFAB.LOGIC_PORT_ACTIVE;
+				ports[i].inactiveDescription = invert ? PREFAB.LOGIC_PORT_INACTIVE_INVERTED : PREFAB.LOGIC_PORT_INACTIVE;
 			}
 		}
 

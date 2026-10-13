@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using STRINGS;
 using TUNING;
 using UnityEngine;
+using PREFAB = SmartWeightPlate.ModStrings.BUILDINGS.PREFABS.SMARTWEIGHTPLATE;
 
 namespace SmartWeightPlate
 {
@@ -35,7 +36,7 @@ namespace SmartWeightPlate
 			def.LogicOutputPorts = new List<LogicPorts.Port>
 			{
 				LogicPorts.Port.OutputPort(SmartWeightPlate.PortId, new CellOffset(0, 0),
-					ModStrings.PortName, ModStrings.PortActive, ModStrings.PortInactive, show_wire_missing_icon: true)
+					PREFAB.LOGIC_PORT, PREFAB.LOGIC_PORT_ACTIVE, PREFAB.LOGIC_PORT_INACTIVE, show_wire_missing_icon: true)
 			};
 			def.AddSearchTerms(SEARCH_TERMS.AUTOMATION);
 			GeneratedBuildings.RegisterWithOverlay(OverlayModes.Logic.HighlightItemIDs, ID);

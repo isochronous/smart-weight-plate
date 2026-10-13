@@ -16,7 +16,7 @@ The plate weighs whatever sits on the tile above it, exactly like the vanilla We
 - The plate looks pressed while it is holding in the heavy state, its two knobs slide across when it is pressed and back when it is released, and its light shows the signal it is sending.
 - Supports the copy-settings tool; all settings are saved with the building.
 
-Typical use: keep a debris pile between two limits, so an auto-sweeper or conveyor loader tops it up only after it has run low, instead of chattering around a single threshold.
+Typical use: stop a conveyor chute from refilling a pile once it reaches the high threshold, and let it refill again only after the pile has dropped to the low threshold; or stop a sweeper from collecting a pile once it has dropped to the low threshold, and let it collect again only once the pile is back at the high threshold. Either way the machine is not chattering around a single threshold.
 
 Unlocked by **Advanced Automation** (the tier after the Weight Plate's Generic Sensors). Costs 75 kg Refined Metal. Found under Automation > Sensors, next to the vanilla Weight Plate.
 
@@ -30,6 +30,10 @@ As a local mod:
    - Linux: `~/.config/unity3d/Klei/Oxygen Not Included/mods/local/SmartWeightPlate`
    - macOS: `~/Library/Application Support/unity.Klei.Oxygen Not Included/mods/local/SmartWeightPlate`
 3. Start the game, enable the mod under **Mods** in the main menu, and let the game restart.
+
+## Translations
+
+The mod is available in Chinese (Simplified); the game's language setting picks it. Other languages come from `src/SmartWeightPlate/translations/SmartWeightPlate.pot`: translate it as `<locale>.po` (`ko.po`, `ru.po`, the game's locale codes) in that folder and the game loads it.
 
 ## Building
 
