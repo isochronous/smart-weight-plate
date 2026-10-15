@@ -1,5 +1,7 @@
 # Smart Weight Plate
 
+**This repository is archived.** This project now lives in [isochronous/ONI-Mods](https://github.com/isochronous/ONI-Mods/tree/main/mods/smart-weight-plate), with its full history; work and new releases continue there. The releases published here stay available.
+
 An [Oxygen Not Included](https://www.klei.com/games/oxygen-not-included) mod that adds a **Smart Weight Plate**: a weight plate with a low and a high threshold, so its signal behaves like a Liquid or Gas Reservoir's instead of a single cut-off.
 
 Status: **work in progress**. The building has its own art: `publish/sprite.png` is cut into a body (red and green panel variants) and a moving cap, and built into the kanim under `src/SmartWeightPlate/anim/assets/smart_weight_plate/` by `tools/make_art.py`, so it shows the signal colour and sinks when pressed just like the vanilla plate. The same sprite is the build-menu icon; the construction ghost is its white outline, as in vanilla art.
